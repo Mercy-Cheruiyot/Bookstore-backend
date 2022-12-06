@@ -34,10 +34,18 @@ puts "Creating books..."
 10.times do
 Book.create(
         title:Faker::Book.title,
-        author:Faker::Book.author,
+        author_id:rand(1..10),
         publication_year:2008,
         # Faker::Number.between(1918,2022),
         genre:['Comic','Romance','Anime','Financial'],
         user_id:rand(1..10))
 end
+
+puts "Creating authors..."
+10.times do
+Author.create(
+        name:Faker::Book.author,
+        genre:['Comic','Romance','Anime','Financial'],
+        image_url:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033")
+    end
 puts "Seeding done!"
