@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
     def index
+        user = User.find(session[:user_id])
         author=Author.all
         render json: author, status: :ok
     end
@@ -15,7 +16,8 @@ class AuthorsController < ApplicationController
 
     end
     def create
-        author= Author.create!(author_params)
+  
+        author= @current_user.authors.create!(author_params)
         render json: author, status: :created
 
     end
@@ -26,12 +28,12 @@ class AuthorsController < ApplicationController
 
     end
     private 
+    
     def find_author
         Author.find_by(id: params[:id])
     end
     def author_params
-        params.permit(:name, :genre, :image_url)
+        params.permit(:name, :genre, :image)
     end
-
 
 end

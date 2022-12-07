@@ -12,21 +12,21 @@ users=User.create([
     password:"password",
     fullname:"Salt",
     email:"a@gmail.com",
-    image_url:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033"
+    image:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033"
 },
 {
     username:"Admin",
     password:"password",
     fullname:"Admin",
     email:"xxxx@gmail.com",
-    image_url:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033"
+    image:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033"
 },
 {
     username:"User",
     password:"password",
     fullname:"User",
     email:"xy@gmail.com",
-    image_url:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033"
+    image:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033"
 }
 
 ])
@@ -38,7 +38,8 @@ Book.create(
         publication_year:2008,
         # Faker::Number.between(1918,2022),
         genre:['Comic','Romance','Anime','Financial'],
-        user_id:rand(1..10))
+        user_id:rand(1..2),
+        image:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033")
 end
 
 puts "Creating authors..."
@@ -46,6 +47,6 @@ puts "Creating authors..."
 Author.create(
         name:Faker::Book.author,
         genre:['Comic','Romance','Anime','Financial'],
-        image_url:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033")
+        image:"https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest?cb=20190312030033")
     end
 puts "Seeding done!"

@@ -14,19 +14,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_052037) do
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.string "genre"
-    t.string "image_url"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "username"
     t.string "title"
     t.integer "author_id"
     t.integer "publication_year"
     t.integer "user_id"
     t.string "genre"
-    t.string "image_url"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_052037) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "fullname"
-    t.string "image_url"
+    t.string "image"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
